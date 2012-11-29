@@ -171,10 +171,13 @@
 }
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-    if(_entryElement && _entryElement.delegate && [_entryElement.delegate respondsToSelector:@selector(QEntryShouldChangeCharactersInRangeForElement:andCell:)]){
-        return [_entryElement.delegate QEntryShouldChangeCharactersInRangeForElement:_entryElement andCell:self];
+    if(_entryElement && _entryElement.delegate && [_entryElement.delegate respondsToSelector:@selector(QEntryShouldChangeCharactersInRange:forElement:replacementString:andCell:)]){
+        return [_entryElement.delegate QEntryShouldChangeCharactersInRange:range forElement:_entryElement replacementString:string andCell:self];
+        
+    } else {
+        return YES;
     }
-    return YES;
+    
 }
 
 

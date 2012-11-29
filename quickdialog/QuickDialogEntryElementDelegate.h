@@ -6,7 +6,7 @@
 @protocol QuickDialogEntryElementDelegate <NSObject>
 
 @optional
-- (BOOL)QEntryShouldChangeCharactersInRangeForElement:(QEntryElement *)element andCell:(QEntryTableViewCell *)cell;
+- (BOOL)QEntryShouldChangeCharactersInRange:(NSRange)range forElement:(QEntryElement *)element replacementString:(NSString *)string andCell:(QEntryTableViewCell *)cell;
 - (void)QEntryEditingChangedForElement:(QEntryElement *)element  andCell:(QEntryTableViewCell *)cell;
 - (void)QEntryDidBeginEditingElement:(QEntryElement *)element  andCell:(QEntryTableViewCell *)cell;
 - (void)QEntryDidEndEditingElement:(QEntryElement *)element andCell:(QEntryTableViewCell *)cell;
